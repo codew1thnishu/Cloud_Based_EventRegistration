@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public users can view events and create registrations.
+    match /events/{eventId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null;
+    }
+
+    match /registrations/{registrationId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

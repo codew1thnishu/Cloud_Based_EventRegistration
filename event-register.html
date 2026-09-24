@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration | Cloud Event Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="event-register.html">Event Register</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Admin Login</a>
+    </nav>
+    <h1>Event Registration</h1>
+    <p>Choose an event and register online.</p>
+</header>
+
+<main class="page-container">
+    <section class="section-card">
+        <h2>Upcoming Events</h2>
+        <p id="eventsMessage" class="dashboard-message"></p>
+        <div id="publicEvents" class="event-grid">
+            <p class="loading">Loading events...</p>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2>Register for an Event</h2>
+        <form id="registrationForm" class="form-grid">
+            <label for="fullName">Full Name</label>
+            <input id="fullName" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" type="email" required>
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" required>
+
+            <label for="college">College / Organization</label>
+            <input id="college" required>
+
+            <label for="selectedEvent">Selected Event</label>
+            <select id="selectedEvent" required>
+                <option value="">Select an event</option>
+            </select>
+
+            <button type="submit" id="registerBtn" class="primary-btn">Register</button>
+            <p id="registrationMessage" class="dashboard-message"></p>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>Cloud-Based Event Management System</p>
+    <p>Developed for Cloud Computing Tiny Project</p>
+    <p>Email: support@cloudevent.com | Phone: +91 9876543210</p>
+    <p>&copy; 2026 All Rights Reserved.</p>
+</footer>
+
+<script type="module" src="register-page.js"></script>
+</body>
+</html>

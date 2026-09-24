@@ -1,78 +1,32 @@
-# Cloud_Based_Event_Registration
 # Cloud-Based Event Management System
 
-A web-based Cloud-Based Event Management System developed as a Cloud Computing Tiny Project. The system allows participants to view available events and register online, while administrators can securely log in and manage events and participant registrations using Firebase.
+## Run
+1. Open the folder in VS Code.
+2. Run it with Live Server.
+3. Open `index.html`.
+4. Use Event Register for participants.
+5. Use Admin Login for the administrator.
 
-## Project Overview
+## Firebase setup
+The project uses Firebase Authentication and Cloud Firestore.
 
-The Cloud-Based Event Management System provides a simple and centralized platform for managing events online.
+### Authentication
+Enable:
+Firebase Console -> Authentication -> Sign-in method -> Email/Password.
 
-The system has two main users:
+Create the admin account in:
+Authentication -> Users.
 
-- Participants – View events and register for events.
-- Administrators – Log in securely and manage events and participant registrations.
+### Firestore
+Create a Firestore database and publish the included `firestore.rules`.
 
-The project uses Firebase Authentication for administrator login and Cloud Firestore for cloud-based storage of events and registrations.
+### Important API-key note
+The supplied `firebase.js` contains the configuration currently shown in the project screenshots. If the browser still returns:
 
-## Features
+auth/api-key-not-valid
 
-### Participant Features
+do not change the application code. Copy a fresh Web App config from:
+Firebase Console -> Project settings -> Your apps -> Web app -> Config
+and replace the `firebaseConfig` object in `firebase.js`.
 
-- View available events.
-- View event details dynamically from Firestore.
-- View event name, description, date, time, venue, and available seats.
-- Select an event for registration.
-- Enter participant details.
-- Submit registration online.
-- Store registration information in Firebase Firestore.
-
-### Administrator Features
-
-- Secure administrator login.
-- Firebase Email/Password authentication.
-- Admin dashboard.
-- Add new events.
-- Edit existing events.
-- Delete events.
-- View participant registrations.
-- Logout.
-
-## Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Website structure |
-| CSS3 | Styling and responsive user interface |
-| JavaScript | Application logic and interactivity |
-| Firebase Authentication | Administrator authentication |
-| Firebase Firestore | Cloud database |
-| Firebase Web SDK | Firebase integration |
-| Visual Studio Code | Development environment |
-| Live Server | Local testing |
-| Git | Version control |
-| GitHub | Source code hosting |
-
-## Project Structure
-
-```text
-Cloud-Based-Event-Management-System/
-│
-├── index.html
-├── event-register.html
-├── about.html
-├── contact.html
-├── login.html
-├── admin-dashboard.html
-│
-├── firebase.js
-├── login.js
-├── admin-dashboard.js
-├── register-page.js
-├── script.js
-│
-├── style.css
-├── README.md
-│
-├── images/
-│
-└── backup/
+The API key is not a password. Firebase web apps normally expose this identifier in client-side code; access control belongs in Authentication and Firestore Security Rules.

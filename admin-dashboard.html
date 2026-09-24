@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Cloud Event Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="event-register.html">Event Register</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <button id="logoutBtn" class="nav-button">Logout</button>
+    </nav>
+    <h1>Admin Dashboard</h1>
+    <p>Manage events and participant registrations.</p>
+</header>
+
+<main class="page-container">
+    <p id="dashboardMessage" class="dashboard-message"></p>
+
+    <section class="section-card">
+        <h2>Add New Event</h2>
+        <form id="eventForm" class="form-grid">
+            <label for="eventName">Event Name</label>
+            <input id="eventName" required>
+
+            <label for="eventDescription">Description</label>
+            <textarea id="eventDescription" rows="4" required></textarea>
+
+            <label for="eventDate">Date</label>
+            <input type="date" id="eventDate" required>
+
+            <label for="eventTime">Time</label>
+            <input type="time" id="eventTime" required>
+
+            <label for="eventVenue">Venue</label>
+            <input id="eventVenue" required>
+
+            <label for="eventSeats">Available Seats</label>
+            <input type="number" id="eventSeats" min="1" required>
+
+            <button type="submit" id="addEventBtn" class="primary-btn">Add Event</button>
+        </form>
+    </section>
+
+    <section class="section-card">
+        <h2>Manage Events</h2>
+        <div id="eventsList" class="admin-events">
+            <p class="loading">Loading events...</p>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2>Participant Registrations</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>College</th>
+                        <th>Selected Event</th>
+                    </tr>
+                </thead>
+                <tbody id="registrationsTable">
+                    <tr><td colspan="5">Loading registrations...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Cloud-Based Event Management System</p>
+    <p>Developed for Cloud Computing Tiny Project</p>
+    <p>Email: support@cloudevent.com | Phone: +91 9876543210</p>
+    <p>&copy; 2026 All Rights Reserved.</p>
+</footer>
+
+<script type="module" src="admin-dashboard.js"></script>
+</body>
+</html>
